@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import Button from "./components/Button";
+import { Link } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const MainWrapper = styled.section`
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+`;
+
+//Customize exterior Components
+const styledLink = styled(Link);
+
+interface PaginationProps {
+  page: string;
 }
+
+const PaginationWrapper = styled.div<PaginationProps>`
+  display: flex;
+  width: 100%;
+  justify-content: ${(props) => {
+    if (props.page === "first") return "flex-end";
+    else if (props.page === "middle") return "space-between";
+    else return "flex-start";
+  }};
+`;
+
+const App: React.FC = () => {
+  return (
+    <MainWrapper className="">
+      <Button primary bgColor="violet">
+        My Primary Button
+      </Button>
+      <Button>hello world</Button>
+      <PaginationWrapper page="middle">
+        <Button>Page5</Button>
+      </PaginationWrapper>
+    </MainWrapper>
+  );
+};
 
 export default App;
