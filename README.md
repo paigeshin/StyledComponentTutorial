@@ -1,3 +1,7 @@
+# URL
+
+[https://www.youtube.com/watch?v=c5-Vex3ufFU](https://www.youtube.com/watch?v=c5-Vex3ufFU)
+
 # Installation
 
 ```bash
@@ -96,7 +100,7 @@ const PaginationWrapper = styled.div<PaginationProps>`
   }};
 `;
 
-//Usage
+//Usage 
 <PaginationWrapper page="middle">
 ```
 
@@ -138,8 +142,8 @@ import GlobalStyle from "./theme/GlobalStyles";
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <App />
+      <GlobalStyle />
+      <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
@@ -198,7 +202,7 @@ const StyledButton = styled.button<ButtonProps>`
   background-color: ${(props) => props.theme.colors.light};
   color: ${(props) => props.theme.colors.link};
   font-size: ${(props) => props.theme.fontSizes.p};
-`;
+`
 ```
 
 # Animation
@@ -215,7 +219,7 @@ export const FadeIn = keyframes`
     }
 `;
 
-// apply
+// apply 
 ```
 
 # Modularize
@@ -235,6 +239,6 @@ const FadeIn = keyframes`
 `;
 
 const StyledButton = styled.button<ButtonProps>`
-  animation: 2s ${FadeIn} ease-in;
-`;
+	animation: 2s ${FadeIn} ease-in;
+`
 ```
